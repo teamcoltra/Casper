@@ -1,36 +1,19 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-    the {body} of the default.hbs template, which contains our header/footer. }}
-
 <main class="content" role="main">
-
-    <article class="{{post_class}}">
-
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a id="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
-
-        {{! Everything inside the #post tags pulls data from the post }}
+     <article class="post {{post_class}}">
         {{#post}}
-
-        {{! Everything below outputs content of the the post which has been published }}
-        <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
-
-        <h1 class="post-title">{{{title}}}</h1>
-
-        <section class="post-content">
-            {{content}}
-        </section>
-
-        <footer class="post-footer">
+        <header class="post-header">
+            <img class="post-avatar" alt="{{author.name}}&#x27;s avatar" height="48" width="48" src="{{author.image}}">
+            <h1 class="post-title"><a href="{{url}}">{{{title}}}</a></h1>
+            <p class="post-meta">
+                 By <a href="{{author.website}}" class="post-author">{{author.name}}</a> on <time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> under {{#tags}}<span class="post-category post-category-{{name}}">{{name}}</span> {{/tags}}
+             </p>  
+        </header>
+         <section class="post-description">
+                        {{content}}
+            </section>
+    </article>
 
             {{#if author}}
                 <section class="author">
@@ -54,8 +37,6 @@
                     <span class="hidden">Google+</span>
                 </a>
             </section>
-
-        </footer>
 
         {{/post}}
 
