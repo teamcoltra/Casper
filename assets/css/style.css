@@ -68,13 +68,12 @@
 }
 
 .post-footer h4 {
-    font-size: 1.8rem;
+    font-size: 1rem;
     margin: 0;
 }
 
 .post-footer p {
     margin: 1rem 0;
-    font-size: 1.4rem;
     line-height: 1.6em;
 }
 
@@ -91,7 +90,6 @@
     position: absolute;
     top: 4rem;
     right: 0;
-    width: 140px;
 }
 
 .post-footer .share a {
@@ -206,16 +204,18 @@ a:focus {
 }
 
 .sidebar .sidebar-overlay {
-position: absolute;
-top: 0;
-right: 0;
-bottom: 0;
-left: 0;
-background: rgba(24, 33, 61, 0.5);
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(24, 33, 61, 0.9);
 }
 
 .header {
-    margin: 50% 2em 0;
+	z-index: 99;
+	position: relative;
+    margin: 50% 1em 0;
     text-align: right;
 }
 
@@ -225,6 +225,10 @@ background: rgba(24, 33, 61, 0.5);
 }
 .brand-title {
     text-transform: uppercase;
+}
+.brand-title a {
+color: #FFF;
+text-decoration: none;
 }
 .brand-tagline {
     font-weight: 300;
@@ -324,7 +328,7 @@ background: rgba(24, 33, 61, 0.5);
 
 .footer {
     text-align: center;
-    padding: 1em 0;
+    padding: 5em 0;
 }
 .footer a {
     color: #ccc;
@@ -332,6 +336,7 @@ background: rgba(24, 33, 61, 0.5);
 }
 .footer p {
 color: #EBEBEB;
+font-size: 80%;
 }
 
 .footer .pure-menu a:hover,
@@ -350,7 +355,6 @@ color: #EBEBEB;
         text-align: center;
         top: auto;
         margin: 3em auto;
-        position: static;
     }
 
     #layout {

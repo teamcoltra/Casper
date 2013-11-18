@@ -30,7 +30,7 @@
             <header class="header">
                 <hgroup>
                     {{#if @blog.logo}}<a class="brand-title" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
-                    <h1 class="brand-title">{{@blog.title}}</h1>
+                    <h1 class="brand-title"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
                     <h2 class="brand-tagline">{{@blog.description}}</h2>
                 </hgroup>
 
